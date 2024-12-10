@@ -6,7 +6,7 @@
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
-def subtrings(string, dictionary)
+def substrings(string, dictionary)
     split_string = string.downcase.split(" ")
     final_string = split_string.map { |word| word.delete('^a-zA-Z0-9') }
 
