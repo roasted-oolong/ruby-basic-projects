@@ -22,6 +22,10 @@ happy = emotion.new
 #Create instance methods that allow car to speed up, break, and shut off
 #Add accessor method to MyCar class to change and view color of car
 #Add accessor method to MyCar class to only view year of car
+
+#Classes and Objects Pt.1 Exercise #3
+#Create spray_paint method that can be called on an object and
+#will modify the color of the car
 class MyCar
     attr_accessor :color
     attr_reader :year
@@ -46,5 +50,10 @@ class MyCar
     def shutoff
         @speed = 0
         puts "Shutting down..."
+    end
+
+    def spray_paint(color)
+        self.color = color
+        puts "You've spray painted your car #{color}"
     end
 end
