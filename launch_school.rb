@@ -125,6 +125,15 @@ class Vehicle
         @speed = 0
         puts "Shutting down..."
     end
+
+    def age
+        puts "The car is #{find_age} years old."
+    end
+
+    private
+    def find_age
+        time_passed = Time.now.year - self.year
+    end
 end
 
 class MyCar < Vehicle
@@ -133,5 +142,15 @@ end
 
 class MyTruck < Vehicle
     ANDROID_AUTO = false
+    include Liftable
 end
 
+module Liftable
+    puts "This car is lifted"
+end
+
+puts "--- Vehicle method lookup ---"
+puts Vehicle.ancestors
+
+puts "--- MyTruck method lookup ---"
+puts MyTruck.ancestors
