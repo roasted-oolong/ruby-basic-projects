@@ -154,3 +154,26 @@ puts Vehicle.ancestors
 
 puts "--- MyTruck method lookup ---"
 puts MyTruck.ancestors
+
+##Ex.7
+class Student
+    attr_writer :grade
+
+    def initialize(name, grade)
+        @name = name
+        @grade = grade
+    end
+
+    def better_grade_than?(other_person)
+        if grade > other_person.grade
+            puts "Well done!"
+        end
+    end
+
+    protected
+    def grade
+        @grade
+    end
+end
+joe = Student.new('joe',90)
+max = Student.new('max',71)
