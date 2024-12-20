@@ -177,3 +177,16 @@ class Student
 end
 joe = Student.new('joe',90)
 max = Student.new('max',71)
+
+
+class Celsius
+    def initialize(temperature)
+      @temperature = temperature
+    end
+
+    def to_fahrenheit
+        (@temperature * 1.8) + 36
+    end
+end
+celsius = Celsius.new(10)
+puts celsius.to_fahrenheit()
