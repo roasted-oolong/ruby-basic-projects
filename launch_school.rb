@@ -178,7 +178,7 @@ end
 joe = Student.new('joe',90)
 max = Student.new('max',71)
 
-
+#Code Quizzes
 class Celsius
     def initialize(temperature)
       @temperature = temperature
@@ -190,3 +190,131 @@ class Celsius
 end
 celsius = Celsius.new(10)
 puts celsius.to_fahrenheit()
+
+#Code Quizzes
+class Dog
+    def initialize(name)
+        @name = name
+    end
+
+    def bark
+        "Ruff ruff"
+    end
+end
+tiki = Dog.new('tiki')
+tiki.bark
+###
+class Insect
+    def initialize(age_in_days)
+      @age_in_days = age_in_days
+    end
+
+    def age_in_years
+        @age_in_days.to_f / 365
+    end
+end
+###
+class Lamp
+    def self.about_me
+        "We brighten up people's lives"
+    end
+end
+###
+class WaterBottle
+    def initialize(size)
+      @size = size
+    end
+
+    def to_ounce
+        size * 3
+    end
+
+    protected
+    def size
+        @size
+    end
+end
+klean_kanteen = WaterBottle.new(24)
+klean_kanteen.to_ounce
+###
+class Person
+     def initialize(age)
+        @age = age
+    end
+
+    def age=(new_age)
+        @age = new_age
+    end
+end
+thomas = Person.new(50)
+thomas.age=(42)
+thomas.age
+###
+module MathHelper
+    def multiply_by_two(num)
+        num * 2
+    end
+end
+
+class Homework
+    include MathHelper
+end
+my_homework = Homework.new
+my_homework.multiply_by_two(4)
+###
+class BaseballPlayer
+    def initialize(hits, walks, at_bats)
+        @hits = hits
+        @walks = walks
+        @at_bats = at_bats
+    end
+
+    def batting_average
+        @hits.to_f / @at_bats
+    end
+
+    def on_base_percentage
+        (@hits + @walks).to_f / @at_bats
+    end
+end
+pickles = BaseballPlayer.new(330, 110, 1125)
+pickles.batting_average
+pickles.on_base_percentage
+###
+class Person
+    def initialize(first_name, last_name)
+        @first_name = first_name
+        @last_name = last_name
+    end
+
+    def full_name
+        "#{first_name} #{last_name}"
+    end
+
+    protected
+    def first_name
+        @first_name
+    end
+    def last_name
+        @last_name
+    end
+end
+bob = Person.new("Bob", "Lob")
+bob.full_name()
+###
+module MathHelpers
+    def exponent(number, exponent)
+        number ** exponent
+    end
+end
+
+class Calculator
+    include MathHelpers
+
+    def square_root(number)
+        exponent(number, 0.5)
+    end
+end
+c = Calculator.new
+c.square_root(4)
+c.square_root(5)
