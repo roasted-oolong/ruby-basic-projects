@@ -1,11 +1,17 @@
 def merge_sort(arr)
-  if arr.length == 1
+  if arr.length <= 1 
     return arr
-  else
-    arr.each_slice((arr.size / 2.0).ceil).to_a
-    sort left half
-    sort right half
-    merge
+  else  
+    mid = arr.length / 2
+    left = merge_sort(arr[0...mid])
+    right = merge_sort(arr[mid..-1])
+
+    sorted = []
+    until left.empty? || right.empty?
+        sorted << (left.first <= right.first ? left.shift : right.shift)
+    end
+
+    sorted + left + right
   end
 end
 
